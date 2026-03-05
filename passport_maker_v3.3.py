@@ -373,14 +373,14 @@ class PassportMakerApp(QWidget):
         a4_canvas = Image.new("RGB", (a4_w, a4_h), "white")
         
         img_w, img_h = self.processed_passport_photo.size
-        x, y = 100, 100
+        x, y = 40, 40
         gap = 50
 
         for _ in range(copies):
             a4_canvas.paste(self.processed_passport_photo, (x, y))
             x += img_w + gap
             if x + img_w > a4_w:
-                x = 100
+                x = 40
                 y += img_h + gap
 
         self.a4_sheet = a4_canvas
